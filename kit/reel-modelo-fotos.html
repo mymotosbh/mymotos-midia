@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:M;font-weight:800;src:url('F/montserrat/files/montserrat-latin-800-normal.woff2')}
+@font-face{font-family:M;font-weight:900;src:url('F/montserrat/files/montserrat-latin-900-normal.woff2')}
+*{box-sizing:border-box}html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:M,sans-serif;color:#fff}
+.a{position:absolute;animation-fill-mode:both}
+.sc{position:absolute;inset:0;overflow:hidden;opacity:0}
+.bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(34px) brightness(.45)}
+.ph{position:absolute;left:0;top:285px;width:1080px;height:1350px;background-size:cover;background-position:center}
+.ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.15) 26%,rgba(0,0,0,0) 40%,rgba(0,0,0,0) 80%,rgba(0,0,0,.6) 100%)}
+.grain{position:absolute;inset:0;background:url(grain.png);mix-blend-mode:overlay;opacity:.15}
+h1{margin:0;position:absolute;left:64px;right:64px;top:360px;font-weight:900;font-size:120px;line-height:.88;letter-spacing:-4px;text-transform:uppercase;text-shadow:0 6px 30px rgba(0,0,0,.4)}
+h1 span{color:#ff7f00}
+.tag{position:absolute;left:64px;top:1520px;background:#ff7f00;color:#000;font-weight:900;font-size:40px;padding:12px 24px;border-radius:12px;box-shadow:6px 6px 0 #000}
+.logo{position:absolute;left:64px;top:170px;width:230px}
+@keyframes vis{0%{opacity:0}6%{opacity:1}94%{opacity:1}100%{opacity:0}}
+@keyframes zin{from{transform:scale(1)}to{transform:scale(1.12)}}
+@keyframes zout{from{transform:scale(1.14)}to{transform:scale(1)}}
+@keyframes panl{from{transform:scale(1.12) translateX(40px)}to{transform:scale(1.12) translateX(-40px)}}
+@keyframes up{from{opacity:0;transform:translateY(80px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.4) rotate(-8deg)}70%{transform:scale(1.08) rotate(2deg)}to{opacity:1;transform:rotate(-3deg)}}
+/* timings */
+.s1{animation:vis 4.4s linear 0s both}.s1 .ph{animation:zin 4.4s linear 0s both}.s1 h1{animation:up .5s .3s both}.s1 .tag{animation:pop .5s 1.6s both}
+.s2{animation:vis 4.4s linear 4.1s both}.s2 .ph{animation:panl 4.4s linear 4.1s both}.s2 h1{animation:up .5s 4.4s both}.s2 .tag{animation:pop .5s 5.6s both}
+.s3{animation:vis 4.2s linear 8.3s both}.s3 .ph{animation:zout 4.2s linear 8.3s both}.s3 h1{animation:up .5s 8.6s both}.s3 .tag{animation:pop .5s 9.6s both}
+.s4{animation:vis 4.4s linear 12.3s both}.s4 .ph{animation:zin 4.4s linear 12.3s both}.s4 h1{animation:up .5s 12.6s both}.s4 .tag{animation:pop .5s 13.8s both}
+.s5{animation:vis2 4.6s linear 16.4s both;background:#ff7f00}
+@keyframes vis2{0%{opacity:0}8%{opacity:1}100%{opacity:1}}
+.s5 .ph{top:560px;height:900px;background-image:url(cg.png);background-position:50% 60%;animation:zin 4.6s linear 16.4s both}
+.s5 .ph::after{background:linear-gradient(180deg,#ff7f00 0%,rgba(255,127,0,0) 20%)}
+.s5 h1{color:#000;text-shadow:none;top:230px;font-size:150px;animation:up .5s 16.6s both}
+.cta{position:absolute;left:0;right:0;top:1330px;height:590px;background:#000;animation:rise .5s 17.0s both}
+@keyframes rise{from{transform:translateY(590px)}to{transform:none}}
+.btn{position:absolute;left:64px;top:1400px;display:flex;align-items:center;gap:22px;background:#ff7f00;color:#000;font-weight:900;font-size:60px;padding:26px 44px;border-radius:999px;animation:pop2 .5s 17.4s both}
+@keyframes pop2{from{opacity:0;transform:scale(.4)}70%{transform:scale(1.06)}to{opacity:1;transform:none}}
+.site{position:absolute;left:64px;top:1560px;color:#ff7f00;font-weight:900;font-size:44px;letter-spacing:2px;animation:up .4s 17.8s both}
+.logo5{position:absolute;right:64px;top:1545px;width:240px;animation:up .4s 18s both}
+</style></head><body>
+<div class="sc s1"><div class="bg" style="background-image:url(cg.png)"></div><div class="ph" style="background-image:url(cg.png)"></div><div class="grain"></div>
+ <img class="logo" src="I/mymotos-logo.png"><h1>O corre<br><span>não para.</span></h1><div class="tag">CG START 160</div></div>
+<div class="sc s2"><div class="bg" style="background-image:url(pop.png)"></div><div class="ph" style="background-image:url(pop.png)"></div><div class="grain"></div>
+ <img class="logo" src="I/mymotos-logo.png"><h1>Aluga pelo<br><span>celular.</span></h1><div class="tag">100% PELO WHATSAPP</div></div>
+<div class="sc s3"><div class="bg" style="background-image:url(jef.png)"></div><div class="ph" style="background-image:url(jef.png)"></div><div class="grain"></div>
+ <img class="logo" src="I/mymotos-logo.png"><h1>Sem IPVA.<br><span>Sem Serasa.</span></h1><div class="tag">JEF 150</div></div>
+<div class="sc s4"><div class="bg" style="background-image:url(dk.png)"></div><div class="ph" style="background-image:url(dk.png)"></div><div class="grain"></div>
+ <img class="logo" src="I/mymotos-logo.png"><h1 style="font-size:84px">Chuva ou sol:<br><span>assistência 24h</span></h1><div class="tag">DK 150</div></div>
+<div class="sc s5"><div class="ph"></div><h1>Bora<br>rodar?</h1>
+ <div class="cta"></div>
+ <div class="btn"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg>(31) 98437-6966</div>
+ <div class="site">MYMOTOS.COM.BR</div><img class="logo5" src="I/mymotos-logo.png"></div>
+<script>document.getAnimations().forEach(a=>a.pause());window.seek=t=>document.getAnimations().forEach(a=>{a.currentTime=t*1000});</script>
+</body></html>
