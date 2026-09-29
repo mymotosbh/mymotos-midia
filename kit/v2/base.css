@@ -1,0 +1,14 @@
+@font-face{font-family:M;font-weight:600;src:url('F/montserrat/files/montserrat-latin-600-normal.woff2')}
+@font-face{font-family:M;font-weight:700;src:url('F/montserrat/files/montserrat-latin-700-normal.woff2')}
+@font-face{font-family:M;font-weight:800;src:url('F/montserrat/files/montserrat-latin-800-normal.woff2')}
+@font-face{font-family:M;font-weight:900;src:url('F/montserrat/files/montserrat-latin-900-normal.woff2')}
+@font-face{font-family:PX;src:url('F/press-start-2p/files/press-start-2p-latin-400-normal.woff2')}
+*{box-sizing:border-box}
+body{margin:0;font-family:M,sans-serif}
+.c{position:relative;overflow:hidden;color:#fff}
+.abs{position:absolute}
+.photo{position:absolute;inset:0;background-size:cover;background-position:center}
+.grain{position:absolute;inset:0;background:url(grain.png);mix-blend-mode:overlay;opacity:.35;pointer-events:none}
+.logo{width:230px}
+.sticker{background:#ff7f00;color:#000;font-weight:900;padding:14px 26px;border-radius:14px;box-shadow:6px 6px 0 #000}
+.wa{display:flex;align-items:center;gap:20px}
