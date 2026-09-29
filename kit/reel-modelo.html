@@ -1,0 +1,114 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:M;font-weight:600;src:url('F/montserrat-latin-600-normal.woff2')}
+@font-face{font-family:M;font-weight:700;src:url('F/montserrat-latin-700-normal.woff2')}
+@font-face{font-family:M;font-weight:800;src:url('F/montserrat-latin-800-normal.woff2')}
+@font-face{font-family:M;font-weight:900;src:url('F/montserrat-latin-900-normal.woff2')}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#28303d;font-family:M,sans-serif}
+.stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#28303d}
+.a{position:absolute;animation-fill-mode:both;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+/* moving stripes bg */
+.stripes{left:-600px;top:-600px;width:2400px;height:3200px;opacity:.07;
+ background:repeating-linear-gradient(-35deg,#ff7f00 0 60px,transparent 60px 220px);animation:drift 20s linear both}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(440px)}}
+.scene{position:absolute;inset:0}
+/* S1 0-3.4 */
+.s1{top:180px;animation:out .35s ease-in 3.2s both}
+@keyframes out{to{opacity:0;transform:scale(1.08)}}
+.big{left:72px;right:72px;font-weight:900;color:#fff;font-size:190px;line-height:.9;letter-spacing:-6px}
+.w1{top:560px;animation:up .5s .15s both}
+.w2{top:740px;color:#ff7f00;animation:up .5s .45s both}
+@keyframes up{from{opacity:0;transform:translateY(120px)}to{opacity:1;transform:none}}
+.sub1{left:72px;right:72px;top:1010px;color:#fff;font-weight:800;font-size:60px;line-height:1.08;animation:up .5s 1.1s both}
+.sub1 b{background:#ff7f00;color:#000;padding:0 14px}
+/* S2 3.4-8 */
+.wipe{left:0;top:0;width:1080px;height:1920px;background:#ff7f00;transform-origin:left;animation:wipe .9s cubic-bezier(.7,0,.2,1) 3.2s both}
+@keyframes wipe{0%{transform:scaleX(0)}45%{transform:scaleX(1);transform-origin:left}46%{transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}
+.s2{opacity:0;animation:show .01s 3.6s both, out .35s ease-in 7.8s forwards}
+@keyframes show{to{opacity:1}}
+.k{left:72px;top:300px;font-weight:900;font-size:64px;color:#ff7f00;letter-spacing:4px;animation:up .5s 3.7s both}
+.t2{left:72px;right:60px;top:400px;font-weight:900;color:#fff;font-size:150px;line-height:.92;letter-spacing:-5px;animation:up .6s 3.85s both}
+.t2 span{color:#ff7f00}
+.moto1{left:60px;top:900px;width:980px;animation:ride 1.1s cubic-bezier(.15,.85,.25,1) 4.3s both}
+@keyframes ride{from{transform:translateX(1200px) skewX(-12deg);filter:blur(10px)}70%{filter:blur(0)}to{transform:none}}
+.chip{left:72px;top:1600px;background:#fff;color:#000;font-weight:900;font-size:44px;padding:18px 34px;border-radius:999px;animation:pop .45s 5.4s both}
+@keyframes pop{from{opacity:0;transform:scale(.4) rotate(-8deg)}70%{transform:scale(1.08) rotate(2deg)}to{opacity:1;transform:none}}
+/* S3 8-14 benefits */
+.s3{opacity:0;animation:show .01s 8.1s both, out .35s ease-in 13.8s forwards}
+.t3{left:72px;top:300px;font-weight:900;font-size:100px;line-height:.92;color:#fff;letter-spacing:-4px;animation:up .5s 8.2s both}
+.t3 span{color:#ff7f00}
+.row{left:72px;right:72px;height:190px;border-radius:24px;background:#000;display:flex;align-items:center;gap:36px;padding:0 44px;color:#fff;font-weight:900;font-size:56px;letter-spacing:-1px}
+.row i{font-style:normal;width:96px;height:96px;flex:none;border-radius:50%;background:#ff7f00;color:#000;display:flex;align-items:center;justify-content:center;font-size:60px}
+.r1{top:720px;animation:slide .5s 8.8s both}.r2{top:940px;animation:slide .5s 9.8s both}
+.r3{top:1160px;animation:slide .5s 10.8s both}.r4{top:1380px;animation:slide .5s 11.8s both;background:#ff7f00;color:#000}
+.r4 i{background:#000;color:#ff7f00}
+@keyframes slide{from{opacity:0;transform:translateX(-160px)}to{opacity:1;transform:none}}
+/* S4 14-17.2 frota */
+.s4{opacity:0;animation:show .01s 14.1s both, out .3s ease-in 17.1s forwards}
+.t4{left:72px;top:300px;font-weight:900;font-size:120px;line-height:.92;color:#fff;letter-spacing:-4px;animation:up .5s 14.15s both}
+.t4 span{color:#ff7f00}
+.f{left:90px;width:900px;top:760px;opacity:0}
+.fa{animation:flash 1s 14.6s both}.fb{animation:flash 1s 15.5s both}.fc{animation:flash 1.3s 16.4s both}
+@keyframes flash{0%{opacity:0;transform:translateX(300px)}20%{opacity:1;transform:none}85%{opacity:1;transform:none}100%{opacity:0;transform:translateX(-300px)}}
+.fn{left:72px;right:72px;top:1450px;font-weight:900;font-size:72px;color:#fff;opacity:0}
+.na{animation:flash 1s 14.6s both}.nb{animation:flash 1s 15.5s both}.nc{animation:flash 1.3s 16.4s both}
+/* S5 17.2-22 CTA */
+.s5{opacity:0;animation:show .01s 17.2s both;background:#ff7f00}
+.t5{left:72px;right:72px;top:330px;font-weight:900;font-size:170px;line-height:.9;letter-spacing:-6px;color:#000;animation:up .5s 17.3s both}
+.moto5{left:200px;top:700px;width:680px;animation:up .6s 17.6s both}
+.cta{left:0;right:0;bottom:0;height:780px;background:#000;animation:rise .5s 17.9s both}
+@keyframes rise{from{transform:translateY(780px)}to{transform:none}}
+.btn{left:72px;top:1250px;display:flex;align-items:center;gap:26px;background:#ff7f00;color:#000;font-weight:900;font-size:66px;padding:30px 48px;border-radius:999px;animation:pop .5s 18.4s both, pulse 1s 19s infinite}
+@keyframes pulse{50%{transform:scale(1.05)}}
+.cap{left:72px;top:1175px;color:#fff;font-weight:700;font-size:44px;animation:up .4s 18.2s both}
+.site{left:72px;top:1420px;color:#ff7f00;font-weight:900;font-size:46px;letter-spacing:2px;animation:up .4s 18.7s both}
+.logo{right:72px;top:1405px;width:250px;animation:up .4s 18.9s both}
+</style></head><body>
+<div class="stage">
+ <div class="a stripes"></div>
+
+ <div class="scene s1 a">
+  <div class="a big w1">TÁ</div>
+  <div class="a big w2">PARADO?</div>
+  <div class="a sub1">Cada dia sem moto<br>é <b>dinheiro perdido.</b></div>
+ </div>
+
+ <div class="scene s2 a">
+  <div class="a k">MYMOTOS · BH</div>
+  <div class="a t2">SUA MOTO<br><span>PRA RODAR</span><br>ESSA SEMANA</div>
+  <img class="a moto1" src="I/honda-cg-start-160.png">
+  <div class="a chip">100% ONLINE</div>
+ </div>
+
+ <div class="scene s3 a">
+  <div class="a t3">AQUI É<br><span>SEM ENROLAÇÃO</span></div>
+  <div class="a row r1"><i>✓</i>SEM IPVA</div>
+  <div class="a row r2"><i>✓</i>SEM SERASA</div>
+  <div class="a row r3"><i>✓</i>MANUTENÇÃO INCLUSA</div>
+  <div class="a row r4"><i>✓</i>ASSISTÊNCIA 24H</div>
+ </div>
+
+ <div class="scene s4 a">
+  <div class="a t4">ESCOLHE<br><span>A SUA</span></div>
+  <img class="a f fa" src="I/honda-pop-110i.png"><div class="a fn na">Honda Pop 110i</div>
+  <img class="a f fb" src="I/haojue-dk-150-vermelha.png"><div class="a fn nb">Haojue DK 150</div>
+  <img class="a f fc" src="I/shineray-jef-150-azul.png"><div class="a fn nc">Shineray JEF 150</div>
+ </div>
+
+ <div class="scene s5 a">
+  <div class="a t5">BORA<br>RODAR?</div>
+  <div class="a cta"></div>
+  <img class="a moto5" src="I/shineray-shi-175.png">
+  <div class="a cap">Chama no WhatsApp:</div>
+  <div class="a btn"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg>(31) 98437-6966</div>
+  <div class="a site">MYMOTOS.COM.BR</div>
+  <img class="a logo" src="I/mymotos-logo.png">
+ </div>
+</div>
+<script>
+document.getAnimations().forEach(a=>a.pause());
+window.seek=t=>{document.getAnimations().forEach(a=>{a.currentTime=t*1000});};
+</script>
+</body></html>
