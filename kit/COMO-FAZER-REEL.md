@@ -1,5 +1,5 @@
 # Kit de Reel MyMotos
-1. `tar xjf voz/voz-ptbr-faber.tar.bz2` ; `pip install --break-system-packages sherpa-onnx soundfile` ; `npm i playwright-core @fontsource/montserrat`
+1. `tar xjf voz/voz-ptbr-faber.tar.bz2` ; `pip install --break-system-packages "sherpa-onnx==1.13.8" soundfile (a 2.x quebra o tts.py)` ; `npm i playwright-core @fontsource/montserrat`
 2. Copie `reel-modelo.html` e adapte textos/cenas/tempos (CSS keyframes com animation-delay; `seek(t)` posiciona o tempo). Pastas: `F/` = node_modules/@fontsource/montserrat/files, `I/` = img/.
 3. Narração: escreva segs.json por cena (escreva foneticamente: "Mai Motos", "i pê vê á", "uótsap", "dê cá", "Jéfi"), `python3 tts.py segs.json`, junte com ffmpeg adelay no início de cada cena.
 4. Frames: `node frames.js reel.html fr <segundos> 30` (Chromium em /opt/pw-browsers/chromium).
